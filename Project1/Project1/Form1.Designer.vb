@@ -46,20 +46,22 @@ Partial Class Form1
         'PicPlayer1
         '
         Me.PicPlayer1.BackColor = System.Drawing.SystemColors.Control
-        Me.PicPlayer1.Location = New System.Drawing.Point(330, 330)
+        Me.PicPlayer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PicPlayer1.Location = New System.Drawing.Point(180, 180)
         Me.PicPlayer1.Margin = New System.Windows.Forms.Padding(4)
         Me.PicPlayer1.Name = "PicPlayer1"
-        Me.PicPlayer1.Size = New System.Drawing.Size(100, 100)
+        Me.PicPlayer1.Size = New System.Drawing.Size(50, 50)
         Me.PicPlayer1.TabIndex = 1
         Me.PicPlayer1.TabStop = False
         '
         'PicPlayer2
         '
         Me.PicPlayer2.BackColor = System.Drawing.SystemColors.Control
-        Me.PicPlayer2.Location = New System.Drawing.Point(1130, 1130)
+        Me.PicPlayer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PicPlayer2.Location = New System.Drawing.Point(580, 580)
         Me.PicPlayer2.Margin = New System.Windows.Forms.Padding(4)
         Me.PicPlayer2.Name = "PicPlayer2"
-        Me.PicPlayer2.Size = New System.Drawing.Size(100, 100)
+        Me.PicPlayer2.Size = New System.Drawing.Size(50, 50)
         Me.PicPlayer2.TabIndex = 2
         Me.PicPlayer2.TabStop = False
         '
@@ -87,10 +89,10 @@ Partial Class Form1
         '
         Me.lblStart.AutoSize = True
         Me.lblStart.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.lblStart.Font = New System.Drawing.Font("Arial", 45.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStart.Location = New System.Drawing.Point(1550, 200)
+        Me.lblStart.Font = New System.Drawing.Font("Arial", 22.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStart.Location = New System.Drawing.Point(850, 40)
         Me.lblStart.Name = "lblStart"
-        Me.lblStart.Size = New System.Drawing.Size(656, 134)
+        Me.lblStart.Size = New System.Drawing.Size(333, 68)
         Me.lblStart.TabIndex = 3
         Me.lblStart.Text = "New Game"
         '
@@ -98,10 +100,10 @@ Partial Class Form1
         '
         Me.lblMessage2.AutoSize = True
         Me.lblMessage2.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.lblMessage2.Font = New System.Drawing.Font("Arial", 49.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMessage2.Location = New System.Drawing.Point(300, 700)
+        Me.lblMessage2.Font = New System.Drawing.Font("Arial", 25.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMessage2.Location = New System.Drawing.Point(150, 350)
         Me.lblMessage2.Name = "lblMessage2"
-        Me.lblMessage2.Size = New System.Drawing.Size(604, 149)
+        Me.lblMessage2.Size = New System.Drawing.Size(303, 75)
         Me.lblMessage2.TabIndex = 4
         Me.lblMessage2.Text = "Message"
         Me.lblMessage2.Visible = False
@@ -110,10 +112,10 @@ Partial Class Form1
         '
         Me.lblMessage1.AutoSize = True
         Me.lblMessage1.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.lblMessage1.Font = New System.Drawing.Font("Arial", 49.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMessage1.Location = New System.Drawing.Point(300, 500)
+        Me.lblMessage1.Font = New System.Drawing.Font("Arial", 25.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMessage1.Location = New System.Drawing.Point(150, 250)
         Me.lblMessage1.Name = "lblMessage1"
-        Me.lblMessage1.Size = New System.Drawing.Size(604, 149)
+        Me.lblMessage1.Size = New System.Drawing.Size(303, 75)
         Me.lblMessage1.TabIndex = 5
         Me.lblMessage1.Text = "Message"
         Me.lblMessage1.Visible = False
@@ -121,10 +123,10 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(1550, 550)
+        Me.Label1.Font = New System.Drawing.Font("Arial", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(780, 150)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(615, 810)
+        Me.Label1.Size = New System.Drawing.Size(426, 576)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = resources.GetString("Label1.Text")
         '
@@ -132,9 +134,8 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(2968, 1922)
+        Me.ClientSize = New System.Drawing.Size(2974, 1929)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblMessage1)
         Me.Controls.Add(Me.lblMessage2)

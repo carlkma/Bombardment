@@ -1,9 +1,7 @@
 ﻿Public Class Form1
     'Bombardment: a two-dimensional player-versus-player game
     'By Carl Ma And Kevin Cheng
-    'Version 1.2 - Bug fixes and improvements
-    'Fixed: leftover orange blast; execution of input after death; random explosion of blocks
-    'New bugs: N/A
+    'Version 1.2.1 - Compatible with devices of lower screen resolution
     Public Declare Function GetAsyncKeyState Lib "user32" (ByVal vkey As Integer) As Short
     Dim canMove1, canMove2, canBomb1, canBomb2 As Boolean
     Dim first, ex, ey, upend, downend, leftend, rightend, range1, range2, p1x, p1y, p2x, p2y, countMove1, countMove2, p1Attack, p2Attack, bomb1x, bomb1y, bomb2x, bomb2y As Byte
@@ -16,10 +14,10 @@
         first = 0
         p1Attack = 0
         p2Attack = 0
-        PicPlayer1.Left = 165
-        PicPlayer1.Top = 165
-        PicPlayer2.Left = 565
-        PicPlayer2.Top = 565
+        PicPlayer1.Left = 90
+        PicPlayer1.Top = 90
+        PicPlayer2.Left = 290
+        PicPlayer2.Top = 290
         lblMessage1.Visible = False
         lblMessage2.Visible = False
         canBomb1 = False
@@ -203,16 +201,16 @@
     Private Sub TimerMove1_Tick(sender As Object, e As EventArgs) Handles TimerMove1.Tick
         If countMove1 < 5 Then 'Moves 50/10=5 times
             If dir1 = “u” Then
-                PicPlayer1.Top -= 10
+                PicPlayer1.Top -= 5
             End If
             If dir1 = “d” Then
-                PicPlayer1.Top += 10
+                PicPlayer1.Top += 5
             End If
             If dir1 = “l” Then
-                PicPlayer1.Left -= 10
+                PicPlayer1.Left -= 5
             End If
             If dir1 = “r” Then
-                PicPlayer1.Left += 10
+                PicPlayer1.Left += 5
             End If
             countMove1 += 1
         Else 'Moving process completed
@@ -223,16 +221,16 @@
     Private Sub TimerMove2_Tick(sender As Object, e As EventArgs) Handles TimerMove2.Tick
         If countMove2 < 5 Then 'Moves 50/10=5 times
             If dir2 = “u” Then
-                PicPlayer2.Top -= 10
+                PicPlayer2.Top -= 5
             End If
             If dir2 = “d” Then
-                PicPlayer2.Top += 10
+                PicPlayer2.Top += 5
             End If
             If dir2 = “l” Then
-                PicPlayer2.Left -= 10
+                PicPlayer2.Left -= 5
             End If
             If dir2 = “r” Then
-                PicPlayer2.Left += 10
+                PicPlayer2.Left += 5
             End If
             countMove2 += 1
         Else 'Moving process completed
@@ -259,12 +257,13 @@
         For x = 0 To 14
             For y = 0 To 14
                 Dim pb As New PictureBox
-                pb.Width = 50
-                pb.Height = 50
-                pb.Top = 15 + y * 50
-                pb.Left = 15 + x * 50
+                pb.Width = 25
+                pb.Height = 25
+                pb.Top = 15 + y * 25
+                pb.Left = 15 + x * 25
                 pb.BackColor = Color.Black
                 pb.Name = "picx" + CStr(x) + "y" + CStr(y)
+                pb.BackgroundImageLayout = ImageLayout.Zoom
                 Me.Controls.Add(pb)
                 If board(y, x) = 0 Then
                     pb.BackColor = Color.White

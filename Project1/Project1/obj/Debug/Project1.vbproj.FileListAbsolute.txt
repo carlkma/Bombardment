@@ -33,14 +33,14 @@ C:\Users\Carl\Desktop\Project1 - 副本\Project1\obj\Debug\Project1.vbproj.CoreC
 C:\Users\Carl\Desktop\Project1 - 副本\Project1\obj\Debug\Project1.exe
 C:\Users\Carl\Desktop\Project1 - 副本\Project1\obj\Debug\Project1.xml
 C:\Users\Carl\Desktop\Project1 - 副本\Project1\obj\Debug\Project1.pdb
-D:\NEW\Bombardment-master\Project1\Project1\bin\Debug\Project1.exe.config
-D:\NEW\Bombardment-master\Project1\Project1\bin\Debug\Project1.exe
-D:\NEW\Bombardment-master\Project1\Project1\bin\Debug\Project1.pdb
-D:\NEW\Bombardment-master\Project1\Project1\bin\Debug\Project1.xml
-D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.Form1.resources
-D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.Resources.resources
-D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.vbproj.GenerateResource.cache
-D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.vbproj.CoreCompileInputs.cache
-D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.exe
-D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.xml
-D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.pdb
+D:\Bombardment-master\Bombardment-master\Project1\Project1\bin\Debug\Project1.exe.config
+D:\Bombardment-master\Bombardment-master\Project1\Project1\bin\Debug\Project1.exe
+D:\Bombardment-master\Bombardment-master\Project1\Project1\bin\Debug\Project1.pdb
+D:\Bombardment-master\Bombardment-master\Project1\Project1\bin\Debug\Project1.xml
+D:\Bombardment-master\Bombardment-master\Project1\Project1\obj\Debug\Project1.Form1.resources
+D:\Bombardment-master\Bombardment-master\Project1\Project1\obj\Debug\Project1.Resources.resources
+D:\Bombardment-master\Bombardment-master\Project1\Project1\obj\Debug\Project1.vbproj.GenerateResource.cache
+D:\Bombardment-master\Bombardment-master\Project1\Project1\obj\Debug\Project1.vbproj.CoreCompileInputs.cache
+D:\Bombardment-master\Bombardment-master\Project1\Project1\obj\Debug\Project1.exe
+D:\Bombardment-master\Bombardment-master\Project1\Project1\obj\Debug\Project1.xml
+D:\Bombardment-master\Bombardment-master\Project1\Project1\obj\Debug\Project1.pdb
