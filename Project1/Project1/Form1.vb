@@ -1,15 +1,19 @@
 ﻿Public Class Form1
     'Bombardment: a two-dimensional player-versus-player game
     'By Carl Ma And Kevin Cheng
+    'Version 1.1 - Bug fixes and improvements
+    'Fixed: leftover orange blast; execution of input after death
+    'New bugs: random explosion of blocks
     Public Declare Function GetAsyncKeyState Lib "user32" (ByVal vkey As Integer) As Short
     Dim canMove1, canMove2, canBomb1, canBomb2 As Boolean
-    Dim ex, ey, upend, downend, leftend, rightend, range1, range2, p1x, p1y, p2x, p2y, countMove1, countMove2, p1Attack, p2Attack, bomb1x, bomb1y, bomb2x, bomb2y As Byte
+    Dim first, ex, ey, upend, downend, leftend, rightend, range1, range2, p1x, p1y, p2x, p2y, countMove1, countMove2, p1Attack, p2Attack, bomb1x, bomb1y, bomb2x, bomb2y As Byte
     Dim board(14, 14) As Byte
     Dim dir1, dir2 As String
     Dim special As Double = 0
     Private Sub LblStart_Click(sender As Object, e As EventArgs) Handles lblStart.Click
         eraseBoard()
         genBoard()
+        first = 0
         p1Attack = 0
         p2Attack = 0
         PicPlayer1.Left = 165
@@ -18,6 +22,8 @@
         PicPlayer2.Top = 565
         lblMessage1.Visible = False
         lblMessage2.Visible = False
+        canBomb1 = False
+        canBomb2 = False
         TimerMaster.Enabled = True
         range1 = 1
         range2 = 1
@@ -25,10 +31,6 @@
         p1y = 3
         p2x = 11
         p2y = 11
-        canMove1 = True
-        canMove2 = True
-        canBomb1 = True
-        canBomb2 = True
         PicPlayer1.BackgroundImage = My.Resources.blue
         PicPlayer2.BackgroundImage = My.Resources.red
     End Sub
@@ -74,6 +76,12 @@
     End Sub
     Sub explode(ByVal x As Byte, ByVal y As Byte, ByVal range As Byte)
         Dim i As Byte 'counter
+        For i = upend To downend Step 1
+            Me.Controls("picx" + CStr(ex) + "y" + CStr(i)).BackColor = Color.White
+        Next
+        For i = leftend To rightend Step 1
+            Me.Controls("picx" + CStr(i) + "y" + CStr(ey)).BackColor = Color.White
+        Next
         For i = 0 To range Step 1 'upward
             If i > y Then 'upper edge of the board reached
                 upend = 0 'record end of explosion
@@ -183,6 +191,10 @@
         TimerMove1.Enabled = False
         TimerMove2.Enabled = False
         TimerExplode.Enabled = False
+        canMove1 = False
+        canMove2 = False
+        canBomb1 = False
+        canBomb2 = False
     End Sub
     Private Sub TimerMove1_Tick(sender As Object, e As EventArgs) Handles TimerMove1.Tick
         If countMove1 < 5 Then 'Moves 50/10=5 times
@@ -229,13 +241,13 @@
         Dim temp As Byte
         temp = r.Next(4)
         If temp = 0 Then
-            board = {{1, 1, 0, 2, 0, 0, 0, 1, 1, 1, 1, 2, 0, 2, 0}, {0, 2, 0, 1, 0, 0, 2, 2, 0, 2, 1, 0, 0, 1, 0}, {0, 0, 2, 0, 2, 1, 2, 1, 1, 1, 2, 0, 2, 2, 0}, {1, 1, 0, 0, 0, 1, 2, 2, 2, 1, 0, 0, 0, 0, 1}, {0, 2, 2, 0, 2, 1, 1, 0, 1, 0, 2, 0, 2, 2, 0}, {0, 1, 2, 1, 0, 1, 2, 2, 1, 1, 0, 0, 0, 1, 0}, {0, 1, 0, 1, 2, 0, 2, 2, 2, 2, 1, 2, 1, 2, 0}, {0, 2, 2, 0, 2, 0, 1, 1, 0, 0, 0, 0, 0, 2, 0}, {1, 0, 2, 0, 2, 1, 2, 1, 2, 2, 2, 0, 2, 2, 1}, {2, 1, 0, 0, 0, 1, 2, 1, 0, 1, 0, 0, 0, 0, 0}, {1, 1, 2, 0, 2, 0, 1, 2, 1, 2, 2, 0, 2, 2, 1}, {0, 2, 2, 0, 2, 0, 2, 2, 0, 1, 2, 0, 2, 0, 1}, {0, 1, 1, 1, 0, 1, 1, 2, 0, 1, 0, 0, 0, 1, 1}, {1, 2, 1, 1, 2, 0, 1, 1, 2, 1, 1, 0, 2, 1, 1}, {0, 0, 0, 1, 0, 1, 2, 1, 0, 1, 2, 0, 1, 1, 1}}
+            board = {{0, 1, 0, 2, 0, 0, 0, 1, 1, 1, 1, 2, 0, 2, 0}, {0, 2, 0, 1, 0, 0, 2, 2, 0, 2, 1, 0, 0, 1, 0}, {0, 0, 2, 0, 2, 1, 2, 1, 1, 1, 2, 0, 2, 2, 0}, {1, 1, 0, 0, 0, 1, 2, 2, 2, 1, 0, 0, 0, 0, 1}, {0, 2, 2, 0, 2, 1, 1, 0, 1, 0, 2, 0, 2, 2, 0}, {0, 1, 2, 1, 0, 1, 2, 2, 1, 1, 0, 0, 0, 1, 0}, {0, 1, 0, 1, 2, 0, 2, 2, 2, 2, 1, 2, 1, 2, 0}, {0, 2, 2, 0, 2, 0, 1, 1, 0, 0, 0, 0, 0, 2, 0}, {1, 0, 2, 0, 2, 1, 2, 1, 2, 2, 2, 0, 2, 2, 1}, {2, 1, 0, 0, 0, 1, 2, 1, 0, 1, 0, 0, 0, 0, 0}, {1, 1, 2, 0, 2, 0, 1, 2, 1, 2, 2, 0, 2, 2, 1}, {0, 2, 2, 0, 2, 0, 2, 2, 0, 1, 2, 0, 2, 0, 1}, {0, 1, 1, 1, 0, 1, 1, 2, 0, 1, 0, 0, 0, 1, 1}, {1, 2, 1, 1, 2, 0, 1, 1, 2, 1, 1, 0, 2, 1, 1}, {0, 0, 0, 1, 0, 1, 2, 1, 0, 1, 2, 0, 1, 1, 1}}
         End If
         If temp = 1 Then
-            board = {{1, 2, 1, 1, 2, 1, 0, 0, 2, 1, 0, 1, 1, 2, 0}, {0, 1, 0, 1, 1, 1, 2, 1, 0, 1, 2, 1, 1, 1, 1}, {1, 2, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 1, 2}, {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1}, {1, 2, 2, 0, 2, 1, 2, 1, 2, 1, 2, 0, 2, 1, 2}, {1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 2, 0, 0}, {2, 2, 1, 2, 0, 2, 2, 2, 0, 1, 2, 0, 2, 2, 1}, {1, 1, 0, 1, 0, 1, 0, 2, 1, 0, 1, 0, 0, 0, 1}, {2, 0, 2, 0, 2, 1, 2, 2, 2, 0, 2, 0, 2, 2, 1}, {0, 0, 0, 0, 0, 1, 2, 0, 1, 1, 0, 0, 0, 1, 1}, {1, 2, 2, 0, 2, 1, 2, 0, 2, 0, 2, 0, 2, 2, 1}, {1, 2, 1, 1, 1, 0, 1, 1, 1, 1, 2, 0, 1, 2, 0}, {0, 1, 1, 2, 0, 2, 0, 1, 2, 1, 1, 0, 0, 0, 1}, {2, 0, 2, 0, 2, 1, 0, 1, 1, 2, 2, 0, 2, 0, 2}, {1, 1, 0, 0, 0, 1, 2, 1, 0, 1, 0, 0, 0, 0, 0}}
+            board = {{0, 2, 1, 1, 2, 1, 0, 0, 2, 1, 0, 1, 1, 2, 0}, {0, 1, 0, 1, 1, 1, 2, 1, 0, 1, 2, 1, 1, 1, 1}, {1, 2, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 1, 2}, {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1}, {1, 2, 2, 0, 2, 1, 2, 1, 2, 1, 2, 0, 2, 1, 2}, {1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 2, 0, 0}, {2, 2, 1, 2, 0, 2, 2, 2, 0, 1, 2, 0, 2, 2, 1}, {1, 1, 0, 1, 0, 1, 0, 2, 1, 0, 1, 0, 0, 0, 1}, {2, 0, 2, 0, 2, 1, 2, 2, 2, 0, 2, 0, 2, 2, 1}, {0, 0, 0, 0, 0, 1, 2, 0, 1, 1, 0, 0, 0, 1, 1}, {1, 2, 2, 0, 2, 1, 2, 0, 2, 0, 2, 0, 2, 2, 1}, {1, 2, 1, 1, 1, 0, 1, 1, 1, 1, 2, 0, 1, 2, 0}, {0, 1, 1, 2, 0, 2, 0, 1, 2, 1, 1, 0, 0, 0, 1}, {2, 0, 2, 0, 2, 1, 0, 1, 1, 2, 2, 0, 2, 0, 2}, {1, 1, 0, 0, 0, 1, 2, 1, 0, 1, 0, 0, 0, 0, 0}}
         End If
         If temp = 2 Then
-            board = {{1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1}, {1, 2, 1, 0, 0, 1, 2, 0, 1, 1, 2, 0, 0, 1, 1}, {1, 2, 2, 0, 2, 1, 1, 0, 2, 1, 2, 0, 2, 1, 2}, {1, 1, 0, 0, 0, 0, 2, 1, 1, 0, 0, 0, 0, 0, 1}, {0, 2, 1, 1, 2, 1, 2, 2, 1, 2, 0, 1, 2, 0, 2}, {0, 2, 2, 1, 2, 1, 2, 2, 1, 0, 1, 2, 2, 1, 1}, {0, 2, 2, 1, 0, 1, 2, 1, 0, 2, 2, 1, 0, 0, 1}, {0, 1, 0, 0, 2, 2, 1, 1, 1, 1, 0, 2, 1, 2, 1}, {2, 0, 2, 0, 2, 0, 1, 1, 0, 2, 2, 0, 2, 0, 0}, {2, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 2, 1}, {2, 0, 2, 0, 2, 0, 1, 1, 1, 1, 2, 0, 1, 0, 1}, {0, 1, 0, 0, 0, 0, 2, 2, 1, 1, 0, 0, 0, 0, 1}, {2, 0, 2, 0, 2, 1, 1, 0, 1, 2, 2, 0, 2, 2, 1}, {0, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1}, {1, 2, 1, 2, 1, 0, 2, 1, 1, 1, 2, 0, 1, 1, 1}}
+            board = {{0, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1}, {1, 2, 1, 0, 0, 1, 2, 0, 1, 1, 2, 0, 0, 1, 1}, {1, 2, 2, 0, 2, 1, 1, 0, 2, 1, 2, 0, 2, 1, 2}, {1, 1, 0, 0, 0, 0, 2, 1, 1, 0, 0, 0, 0, 0, 1}, {0, 2, 1, 1, 2, 1, 2, 2, 1, 2, 0, 1, 2, 0, 2}, {0, 2, 2, 1, 2, 1, 2, 2, 1, 0, 1, 2, 2, 1, 1}, {0, 2, 2, 1, 0, 1, 2, 1, 0, 2, 2, 1, 0, 0, 1}, {0, 1, 0, 0, 2, 2, 1, 1, 1, 1, 0, 2, 1, 2, 1}, {2, 0, 2, 0, 2, 0, 1, 1, 0, 2, 2, 0, 2, 0, 0}, {2, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 2, 1}, {2, 0, 2, 0, 2, 0, 1, 1, 1, 1, 2, 0, 1, 0, 1}, {0, 1, 0, 0, 0, 0, 2, 2, 1, 1, 0, 0, 0, 0, 1}, {2, 0, 2, 0, 2, 1, 1, 0, 1, 2, 2, 0, 2, 2, 1}, {0, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1}, {1, 2, 1, 2, 1, 0, 2, 1, 1, 1, 2, 0, 1, 1, 1}}
         End If
         If temp = 3 Then
             board = {{0, 2, 1, 0, 2, 0, 2, 0, 0, 1, 1, 0, 0, 1, 2}, {1, 2, 0, 0, 0, 2, 0, 1, 1, 2, 1, 1, 2, 1, 1}, {1, 0, 1, 0, 1, 1, 0, 0, 2, 2, 1, 0, 2, 2, 0}, {2, 2, 0, 0, 0, 2, 0, 1, 1, 0, 0, 0, 0, 0, 2}, {2, 1, 1, 0, 2, 2, 0, 2, 1, 0, 2, 0, 1, 2, 2}, {2, 2, 2, 1, 0, 1, 2, 2, 2, 2, 2, 0, 1, 2, 2}, {1, 1, 0, 2, 2, 0, 1, 1, 0, 1, 1, 2, 1, 1, 0}, {2, 1, 2, 0, 1, 1, 2, 2, 2, 1, 1, 2, 0, 2, 1}, {1, 0, 1, 2, 2, 2, 2, 2, 1, 0, 1, 0, 1, 2, 1}, {0, 1, 2, 0, 1, 2, 0, 0, 2, 2, 1, 1, 0, 0, 0}, {0, 2, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 2, 1}, {1, 2, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0}, {1, 0, 2, 0, 1, 2, 0, 1, 2, 2, 1, 0, 1, 2, 1}, {2, 0, 0, 0, 2, 0, 2, 1, 1, 2, 2, 0, 2, 2, 1}, {0, 0, 1, 2, 2, 2, 0, 1, 2, 2, 0, 1, 0, 1, 2}}
@@ -536,5 +548,12 @@
                     End If
             End Select
         End If
+        If first = 0 Then
+            canMove1 = True
+            canMove2 = True
+            canBomb1 = True
+            canBomb2 = True
+        End If
+        first = 1
     End Sub
 End Class
