@@ -1,9 +1,9 @@
 ﻿Public Class Form1
     'Bombardment: a two-dimensional player-versus-player game
     'By Carl Ma And Kevin Cheng
-    'Version 1.1 - Bug fixes and improvements
-    'Fixed: leftover orange blast; execution of input after death
-    'New bugs: random explosion of blocks
+    'Version 1.2 - Bug fixes and improvements
+    'Fixed: leftover orange blast; execution of input after death; random explosion of blocks
+    'New bugs: N/A
     Public Declare Function GetAsyncKeyState Lib "user32" (ByVal vkey As Integer) As Short
     Dim canMove1, canMove2, canBomb1, canBomb2 As Boolean
     Dim first, ex, ey, upend, downend, leftend, rightend, range1, range2, p1x, p1y, p2x, p2y, countMove1, countMove2, p1Attack, p2Attack, bomb1x, bomb1y, bomb2x, bomb2y As Byte
@@ -77,10 +77,14 @@
     Sub explode(ByVal x As Byte, ByVal y As Byte, ByVal range As Byte)
         Dim i As Byte 'counter
         For i = upend To downend Step 1
-            Me.Controls("picx" + CStr(ex) + "y" + CStr(i)).BackColor = Color.White
+            If Me.Controls("picx" + CStr(ex) + "y" + CStr(i)).BackColor = Color.Orange Then
+                Me.Controls("picx" + CStr(ex) + "y" + CStr(i)).BackColor = Color.White
+            End If
         Next
         For i = leftend To rightend Step 1
-            Me.Controls("picx" + CStr(i) + "y" + CStr(ey)).BackColor = Color.White
+            If Me.Controls("picx" + CStr(i) + "y" + CStr(ey)).BackColor = Color.Orange Then
+                Me.Controls("picx" + CStr(i) + "y" + CStr(ey)).BackColor = Color.White
+            End If
         Next
         For i = 0 To range Step 1 'upward
             If i > y Then 'upper edge of the board reached
