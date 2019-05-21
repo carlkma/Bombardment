@@ -1,7 +1,8 @@
 ﻿Public Class Form1
     'Bombardment: a two-dimensional player-versus-player game
     'By Carl Ma And Kevin Cheng
-    'Version 1.2.1 - Compatible with devices of lower screen resolution
+    'Version 1.2.2 - Bug fixes and improvements
+    'Compatible with devices of lower screen resolution
     Public Declare Function GetAsyncKeyState Lib "user32" (ByVal vkey As Integer) As Short
     Dim canMove1, canMove2, canBomb1, canBomb2 As Boolean
     Dim first, ex, ey, upend, downend, leftend, rightend, range1, range2, p1x, p1y, p2x, p2y, countMove1, countMove2, p1Attack, p2Attack, bomb1x, bomb1y, bomb2x, bomb2y As Byte
@@ -352,7 +353,7 @@
                         p1Attack = 7 'deploy mine mode
                     Case 8
                         move1("u")
-                        PicPlayer1.Top -= 50
+                        PicPlayer1.Top -= 25
                         explode(p1x, p1y, 2) 'mine explode
                 End Select
             End If
@@ -371,7 +372,7 @@
                         p1Attack = 7 'deploy mine mode
                     Case 8
                         move1("d")
-                        PicPlayer1.Top += 50
+                        PicPlayer1.Top += 25
                         explode(p1x, p1y, 2) 'mine explode
                 End Select
             End If
@@ -390,7 +391,7 @@
                         p1Attack = 7
                     Case 8
                         move1("l")
-                        PicPlayer1.Left -= 50
+                        PicPlayer1.Left -= 25
                         explode(p1x, p1y, 2)
                 End Select
             End If
@@ -409,7 +410,7 @@
                         p1Attack = 7
                     Case 8
                         move1("r")
-                        PicPlayer1.Left += 50
+                        PicPlayer1.Left += 25
                         explode(p1x, p1y, 2)
                 End Select
             End If
@@ -428,7 +429,7 @@
                         p2Attack = 7 'deploy mine mode
                     Case 8
                         move2("u")
-                        PicPlayer2.Top -= 50
+                        PicPlayer2.Top -= 25
                         explode(p2x, p2y, 2) 'mine explode
                 End Select
             End If
@@ -447,7 +448,7 @@
                         p2Attack = 7
                     Case 8
                         move2("d")
-                        PicPlayer2.Top += 50
+                        PicPlayer2.Top += 25
                         explode(p2x, p2y, 2)
                 End Select
             End If
@@ -466,7 +467,7 @@
                         p2Attack = 7
                     Case 8
                         move2("l")
-                        PicPlayer2.Left -= 50
+                        PicPlayer2.Left -= 25
                         explode(p2x, p2y, 2)
                 End Select
             End If
@@ -485,7 +486,7 @@
                         p2Attack = 7
                     Case 8
                         move2("r")
-                        PicPlayer2.Left += 50
+                        PicPlayer2.Left += 25
                         explode(p2x, p2y, 2)
                 End Select
             End If
