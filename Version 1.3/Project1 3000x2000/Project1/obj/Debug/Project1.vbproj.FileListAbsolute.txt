@@ -1,0 +1,69 @@
+D:\Hobbies\Programming\VB\Project1\Project1\bin\Debug\Project1.exe.config
+D:\Hobbies\Programming\VB\Project1\Project1\bin\Debug\Project1.exe
+D:\Hobbies\Programming\VB\Project1\Project1\bin\Debug\Project1.pdb
+D:\Hobbies\Programming\VB\Project1\Project1\bin\Debug\Project1.xml
+D:\Hobbies\Programming\VB\Project1\Project1\obj\Debug\Project1.Form1.resources
+D:\Hobbies\Programming\VB\Project1\Project1\obj\Debug\Project1.Resources.resources
+D:\Hobbies\Programming\VB\Project1\Project1\obj\Debug\Project1.vbproj.GenerateResource.cache
+D:\Hobbies\Programming\VB\Project1\Project1\obj\Debug\Project1.vbproj.CoreCompileInputs.cache
+D:\Hobbies\Programming\VB\Project1\Project1\obj\Debug\Project1.exe
+D:\Hobbies\Programming\VB\Project1\Project1\obj\Debug\Project1.xml
+D:\Hobbies\Programming\VB\Project1\Project1\obj\Debug\Project1.pdb
+D:\Hobbies\Programming\VB\Project1\Project1\obj\Debug\Project1.vbprojAssemblyReference.cache
+C:\Users\Carl\Desktop\Project1\Project1\bin\Debug\Project1.exe.config
+C:\Users\Carl\Desktop\Project1\Project1\bin\Debug\Project1.exe
+C:\Users\Carl\Desktop\Project1\Project1\bin\Debug\Project1.pdb
+C:\Users\Carl\Desktop\Project1\Project1\bin\Debug\Project1.xml
+C:\Users\Carl\Desktop\Project1\Project1\obj\Debug\Project1.vbprojAssemblyReference.cache
+C:\Users\Carl\Desktop\Project1\Project1\obj\Debug\Project1.Form1.resources
+C:\Users\Carl\Desktop\Project1\Project1\obj\Debug\Project1.Resources.resources
+C:\Users\Carl\Desktop\Project1\Project1\obj\Debug\Project1.vbproj.GenerateResource.cache
+C:\Users\Carl\Desktop\Project1\Project1\obj\Debug\Project1.vbproj.CoreCompileInputs.cache
+C:\Users\Carl\Desktop\Project1\Project1\obj\Debug\Project1.exe
+C:\Users\Carl\Desktop\Project1\Project1\obj\Debug\Project1.xml
+C:\Users\Carl\Desktop\Project1\Project1\obj\Debug\Project1.pdb
+C:\Users\Carl\Desktop\Project1 - 副本\Project1\bin\Debug\Project1.exe.config
+C:\Users\Carl\Desktop\Project1 - 副本\Project1\bin\Debug\Project1.exe
+C:\Users\Carl\Desktop\Project1 - 副本\Project1\bin\Debug\Project1.pdb
+C:\Users\Carl\Desktop\Project1 - 副本\Project1\bin\Debug\Project1.xml
+C:\Users\Carl\Desktop\Project1 - 副本\Project1\obj\Debug\Project1.Form1.resources
+C:\Users\Carl\Desktop\Project1 - 副本\Project1\obj\Debug\Project1.Resources.resources
+C:\Users\Carl\Desktop\Project1 - 副本\Project1\obj\Debug\Project1.vbproj.GenerateResource.cache
+C:\Users\Carl\Desktop\Project1 - 副本\Project1\obj\Debug\Project1.vbproj.CoreCompileInputs.cache
+C:\Users\Carl\Desktop\Project1 - 副本\Project1\obj\Debug\Project1.exe
+C:\Users\Carl\Desktop\Project1 - 副本\Project1\obj\Debug\Project1.xml
+C:\Users\Carl\Desktop\Project1 - 副本\Project1\obj\Debug\Project1.pdb
+D:\NEW\Bombardment-master\Project1\Project1\bin\Debug\Project1.exe.config
+D:\NEW\Bombardment-master\Project1\Project1\bin\Debug\Project1.exe
+D:\NEW\Bombardment-master\Project1\Project1\bin\Debug\Project1.pdb
+D:\NEW\Bombardment-master\Project1\Project1\bin\Debug\Project1.xml
+D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.Form1.resources
+D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.Resources.resources
+D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.vbproj.GenerateResource.cache
+D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.vbproj.CoreCompileInputs.cache
+D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.exe
+D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.xml
+D:\NEW\Bombardment-master\Project1\Project1\obj\Debug\Project1.pdb
+D:\NEW\Bombardment-master\Version 1.2\Project1\bin\Debug\Project1.exe.config
+D:\NEW\Bombardment-master\Version 1.2\Project1\bin\Debug\Project1.exe
+D:\NEW\Bombardment-master\Version 1.2\Project1\bin\Debug\Project1.pdb
+D:\NEW\Bombardment-master\Version 1.2\Project1\bin\Debug\Project1.xml
+D:\NEW\Bombardment-master\Version 1.2\Project1\obj\Debug\Project1.Form1.resources
+D:\NEW\Bombardment-master\Version 1.2\Project1\obj\Debug\Project1.Resources.resources
+D:\NEW\Bombardment-master\Version 1.2\Project1\obj\Debug\Project1.vbproj.GenerateResource.cache
+D:\NEW\Bombardment-master\Version 1.2\Project1\obj\Debug\Project1.vbproj.CoreCompileInputs.cache
+D:\NEW\Bombardment-master\Version 1.2\Project1\obj\Debug\Project1.exe
+D:\NEW\Bombardment-master\Version 1.2\Project1\obj\Debug\Project1.xml
+D:\NEW\Bombardment-master\Version 1.2\Project1\obj\Debug\Project1.pdb
+D:\Project1 3000x2000\Project1\bin\Debug\Project1.exe.config
+D:\Project1 3000x2000\Project1\bin\Debug\Project1.exe
+D:\Project1 3000x2000\Project1\bin\Debug\Project1.pdb
+D:\Project1 3000x2000\Project1\bin\Debug\Project1.xml
+D:\Project1 3000x2000\Project1\obj\Debug\Project1.vbprojAssemblyReference.cache
+D:\Project1 3000x2000\Project1\obj\Debug\Project1.Form1.resources
+D:\Project1 3000x2000\Project1\obj\Debug\Project1.Resources.resources
+D:\Project1 3000x2000\Project1\obj\Debug\Project1.vbproj.GenerateResource.cache
+D:\Project1 3000x2000\Project1\obj\Debug\Project1.vbproj.CoreCompileInputs.cache
+D:\Project1 3000x2000\Project1\obj\Debug\Project1.exe
+D:\Project1 3000x2000\Project1\obj\Debug\Project1.xml
+D:\Project1 3000x2000\Project1\obj\Debug\Project1.pdb
