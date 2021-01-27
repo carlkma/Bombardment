@@ -2,7 +2,7 @@
 a two-dimensional player-versus-player game
 
 ## Installation
-Download and run `Project1.exe`
+Download and run `Project1/bin/Debug/Project1.exe`
 Depending on your screen resolution, you may choose the 1500\*1000 or 3000\*2000 versions.
 
 ## Background
